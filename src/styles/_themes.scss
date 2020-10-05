@@ -7,18 +7,20 @@
 
 $themes: (
   light: (
-    backgroundColor: white,
-    footerBackground: white,
-    navBackground: $gray-100,
+    brandIcon: slateblue,
+    backgroundColor: rgb(255, 247, 241),
+    footerBackground: rgb(255, 247, 241),
+    navBackground: rgb(255, 247, 241),
     secondary: $gray-900,
     textColor: $black,
-    firstName: orange,
+    firstName: slateblue,
     lastName: $black,
-    linkHover: $gray-800,
+    linkText: violet,
+    linkHover: rgb(116, 65, 116),
     themeColor: $dark-blue,
     heartColor: pink,
     titleColor: $dark-blue,
-    hrefColor: $dark-blue,
+    hrefColor: black,
     github: $black,
     linkedin: $linkedin-blue,
     ka: $baby-blue,
@@ -29,16 +31,18 @@ $themes: (
     cardBackground: $white,
   ),
   dark: (
-    backgroundColor: #222,
-    footerBackground: #222,
+    brandIcon: violet,
+    backgroundColor: rgb(42, 30, 43),
+    footerBackground: rgb(42, 30, 43),
     secondary: $gray-100,
-    navBackground: $dark-gray,
-    linkHover: $gray-200,
+    navBackground: rgb(42, 30, 43),
+    linkText: pink,
+    linkHover: rgb(166, 124, 131),
     textColor: $gray-300,
     firstName: $gray-100,
-    lastName: $empire-red,
+    lastName: pink,
     titleColor: $white,
-    hrefColor: $faded-red,
+    hrefColor: pink,
     themeColor: $dark-red,
     heartColor: red,
     github: $empire-red,
@@ -79,6 +83,22 @@ $themes: (
 }
 
 /** CUSTOM THEMING BEGIN */
+
+a {
+  @include themify($themes) {
+    color: themed("linkText");
+    &:hover {
+      color: themed("linkHover");
+    }
+  }
+}
+
+.brand-icon {
+  font-size: 2.75rem;
+  @include themify($themes) {
+    color: themed("brandIcon");
+  }
+}
 
 .first-name {
   @include themify($themes) {
@@ -121,7 +141,7 @@ $themes: (
   }
 }
 
-.watch-list-title { 
+.watch-list-title {
   @include themify($themes) {
     color: themed("secondary");
   }
@@ -153,6 +173,54 @@ $themes: (
 .resume-tags {
   @include themify($themes) {
     background: themed("navBackground");
+  }
+}
+
+.github {
+  animation-delay: 0.2s;
+}
+
+.linkedin {
+  animation-delay: 0.4s;
+}
+
+.kaggle {
+  animation-delay: 0.6s;
+}
+
+.mail {
+  animation-delay: 0.8s;
+}
+
+.file {
+  animation-delay: 1s;
+}
+
+.icons,
+.brand-icon,
+.theme-toggle {
+  animation-name: rgblighting;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes rgblighting {
+  0% {
+    color: #fd8dff;
+  }
+  25% {
+    color: #be81ff;
+  }
+  50% {
+    color: #8196ff;
+  }
+  75% {
+    color: #a8ff79;
+  }
+  100% {
+    color: #ff6969;
   }
 }
 
