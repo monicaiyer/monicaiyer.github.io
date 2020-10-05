@@ -10,15 +10,18 @@ export default ({ data }) => {
       <a rel="noopener noreferrer" href={link}>
         {title}
       </a>
-      &nbsp;-<i>{author}</i>
+      {author && <>&nbsp;-<i>{author}</i></>}
     </li>
   )
+
 
   const {
     author,
     occupation,
     readingList,
     showsList,
+    gamesList,
+    findsList,
     designations,
     unemployed,
   } = data.site.siteMetadata
@@ -26,17 +29,18 @@ export default ({ data }) => {
 
   const bookLinks = readingList.map(book => MediaLink(book))
   const showLinks = showsList.map(show => MediaLink(show))
+  const gameLinks = gamesList.map(game => MediaLink(game))
+  const findLinks = findsList.map(finds => MediaLink(finds))
 
   return (
     <PageLayout>
-      <SEO title="About Me" />
-      <PageTitle title="About Me" />
+       <SEO title="About Me" />
       <Container>
         <Image
-          rounded
-          width="140"
-          height="140"
-          src={`../../icons/luke-${toString()}.png`}
+          roundedCircle
+          width="160"
+          height="160"
+          src={`../../icons/me-${toString()}.gif`}
           alt={author}
         />
         <article className="w-75 m-auto pt-2 text-justify">
@@ -44,7 +48,7 @@ export default ({ data }) => {
             {designations.map((attr, i) => (
               <span key={attr}>
                 &nbsp;<b>{attr}</b>&nbsp;
-                {i < designations.length - 1 && <>||</>}
+                {i < designations.length - 1 && <>|</>}
               </span>
             ))}
           </p>
@@ -58,22 +62,12 @@ export default ({ data }) => {
               padawan
             </a>
             &nbsp;
-            <b>{occupation}</b> discovering the ways of the code. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            <b>{occupation}</b> and a senior at the University of Waterloo pursuing a degree in Statistics and Cognitive Science. I have a
+            deep interest in data transparency and am currently exploring projects on Sharktank and DC Comic Characters!
           </p>
+
           <p className="i-5">
-            In my spare time, Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p className="i-5">
-            Check out my <Link to="/projects">projects</Link> to see what I've
-            been up to! Or check out my <Link to="/blog">blog</Link> to see
-            what's recently caught my eye!
+            Check out my <Link to="/projects">projects</Link>, <Link to="/blog">blog </Link>and <a href="https://monicaiyer.tumblr.com" target="_blank">poetry</a> to see what I've been up to!
           </p>
         </article>
         <article className="w-75 m-auto">
@@ -82,11 +76,11 @@ export default ({ data }) => {
               <hr />
               <p className="unemployed">
                 <small>
-                  I am <b>currently looking for new opportunities</b>! If you
+                  I am <b>looking for full-time opportunities in 2021</b>! If you
                   like what you <Link to="/resume">see</Link>, let's get
                   in&nbsp;
                   <a
-                    href="mailto:red.five@rebellion.com"
+                    href="mailto:monicaiyer@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -98,20 +92,35 @@ export default ({ data }) => {
             </>
           )}
           <hr />
-          <h5 className="watch-list-title pt-4">
-            Here are a couple of books from my reading list:
-          </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{bookLinks}</ul>
-          <h5 className="watch-list-title pt-4">
-            Here are a couple of shows from my watch list:
-          </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{showLinks}</ul>
-          <h5 className="watch-list-title pt-4">
-            Here are a couple of movies from my watch list:
-          </h5>
-          <p>
-            <i>...waaaay too many to list.</i>
-          </p>
+
+          <div className="text-left row">
+
+            <div className="col-6">
+            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+              Some of my favourite reads:
+            </h5>
+            <ul className="watch-list">{bookLinks}</ul>
+            </div>
+            <div className="col-6">
+            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+              Binge-worthy shows:
+            </h5>
+            <ul className="watch-list">{showLinks}</ul>
+            </div>
+            <div className="col-6">
+            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+              Games that changed the game:
+            </h5>
+            <ul className="watch-list">{gameLinks}</ul>
+            </div>
+            <div className="col-6">
+            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+              Late night munchies:
+            </h5>
+            <ul className="watch-list">{findLinks}</ul>
+            </div>
+          </div>
+
         </article>
       </Container>
     </PageLayout>
@@ -134,6 +143,15 @@ export const query = graphql`
         showsList {
           title
           author
+          link
+        }
+        gamesList {
+          title
+          author
+          link
+        }
+        findsList {
+          title
           link
         }
       }

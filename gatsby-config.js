@@ -7,40 +7,61 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `John Doe`,
-    author: `John Doe`,
-    firstName: `John`,
-    lastName: `Doe`,
-    description: `John Doe's personal site`,
-    occupation: `Software Engineer`,
-    keywords: [`John`, `Doe`, `Personal`, `Blog`, `Resume`, `Projects`, `Work`],
+    title: `Monica I`,
+    author: `Monica Iyer`,
+    firstName: `Monica`,
+    lastName: `Iyer`,
+    description: `Monica's personal site`,
+    occupation: `Data Scientist`,
+    keywords: [`Monica`, `Iyer`, `Personal`, `Blog`, `Resume`, `Projects`, `Work`],
     siteUrl:
       process.env.URL || process.env.DEPLOY_URL || `http://localhost:8000`,
     unemployed: true,
     designations: [
-      `Coding Monkey`,
-      `Jedi Master`,
-      `Binary Sunset Enthusiast`,
-      `Moisture Farmer`,
+      `ETList`,
+      `Janeite`,
+      `Decision Intelligence Enthusiast`,
+      `Masterchef`,
+      `Voice Artist`
     ],
     readingList: [
       {
-        title: `Sapiens: A Brief History of Humankind`,
-        author: `Yuval Noah Harari`,
-        link: `https://www.goodreads.com/book/show/23692271-sapiens`,
+        title: `The Lovely Bones`,
+        author: `Alice Sebold`,
+        link: `https://www.goodreads.com/book/show/12232938-the-lovely-bones`,
       },
       {
-        title: `Behave: The Biology of Humans at our Best and Worst`,
-        author: `Robert Sapolsky`,
-        link: `https://www.goodreads.com/book/show/31170723-behave`,
+        title: `Weapons of Math Destruction`,
+          author: `Cathy O'Neil`,
+        link: `https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815`,
       },
       {
-        title: `The Gene: An Intimate History`,
-        author: `Siddhartha Mukeherjee`,
-        link: `https://www.goodreads.com/book/show/27276428-the-gene`,
+        title: `Cleopatra: A Life`,
+          author: `Stacy Schiff`,
+        link: `https://www.goodreads.com/book/show/7968243-cleopatra`,
+      },
+      {
+        title: `Eleanor and Park`,
+          author: `Rainbow Rowell`,
+        link: `https://www.goodreads.com/book/show/15745753-eleanor-park`,
+      },
+      {
+        title: `Skulduggery Pleasant Series`,
+        author: `Derek Landy`,
+        link: `https://www.howtoread.me/skulduggery-pleasant-books-in-order/`,
+      },
+      {
+        title: `Far from the Madding Crowd`,
+        author: `Thomas Hardy`,
+        link: `https://www.goodreads.com/book/show/31463.Far_From_the_Madding_Crowd`,
       },
     ],
     showsList: [
+      {
+        title: `Orange is the New Black`,
+        author: `Jenji Kohan`,
+        link: `https://www.imdb.com/title/tt2372162/`,
+      },
       {
         title: `Avatar: The Last Airbender`,
         author: `Micheal DiMartino, Bryan Konietzko`,
@@ -52,11 +73,66 @@ module.exports = {
         link: `https://www.imdb.com/title/tt9561862/`,
       },
       {
-        title: `Star Wars: The Clone Wars`,
-        author: `George Lucas, Dave Filoni`,
-        link: `https://www.imdb.com/title/tt0458290/`,
+        title: `The Keepers`,
+        author: `Ryan White`,
+        link: `https://www.imdb.com/title/tt6792200/`,
+      },
+      {
+        title: `Making a Murderer`,
+        author: `Laura Ricciardi & Moira Demos`,
+        link: `https://www.imdb.com/title/tt5189670/`,
       },
     ],
+    gamesList: [
+      {
+        title: 'God of War PS4',
+        author: 'Santa Monica Studio',
+        link: 'https://godofwar.playstation.com/',
+      },
+      {
+        title: 'Unravel Two',
+        author: 'Electronic Arts',
+        link:'https://www.ea.com/games/unravel/unravel-two',
+      },
+      {
+        title: 'Detroit: Become Human',
+        author: 'Quantic Dream',
+        link:'https://www.playstation.com/en-ca/games/detroit-become-human-ps4/',
+      },
+      {
+        title: 'Horizon Zero Dawn',
+        author: 'Geurilla Games',
+        link:'https://www.playstation.com/en-ca/games/horizon-zero-dawn-ps4/',
+      },
+      {
+        title: 'Injustice 2',
+        author: 'NetherRealm Studios',
+        link: 'https://www.injustice.com/',
+      },
+    ],
+    findsList: [
+      {
+        title: 'Public Secrets',
+        link: 'https://postsecret.com/',
+      },
+      {
+        title: 'Bad Hacks',
+        link: 'https://terriblehack.website/',
+      },
+      {
+        title: 'Doge',
+        link: 'https://chrome.google.com/webstore/detail/doge/hgbjmjjpoakdcllgikgchblebfclefii',
+      },
+      {
+        title: 'Avatar: The Last Airbender API',
+        link: 'https://avatar-the-last-airbender-api.herokuapp.com/'
+      },
+      {
+        title: 'Web Comics',
+        link: 'https://xkcd.com/',
+      },
+    ],
+
   },
   plugins: [
     `gatsby-plugin-preload-link-crossorigin`,
@@ -75,8 +151,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `John Doe's Personal Site`,
-        short_name: `J.Doe`,
+        name: `Monica Iyer's personal site`,
+        short_name: `Monica.I`,
         description: `This is my personal site.`,
         start_url: `/`,
         background_color: `#fff`,

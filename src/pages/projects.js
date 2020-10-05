@@ -60,7 +60,7 @@ export const query = graphql`
     }
     allFile(
       filter: {
-        extension: { eq: "png" }
+        extension: { in: ["jpg"] }
         relativePath: { regex: "/feature/" }
         relativeDirectory: { regex: "/content/projects/" }
       }
@@ -68,7 +68,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 200) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }

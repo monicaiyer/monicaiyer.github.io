@@ -10,15 +10,15 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
         <Row>
           {featuredImages &&
             featuredImages.map(image => (
-              <Col key={image.src}>
-                <Img fluid={image} className="m-auto w-75" />
+              <Col key={image.src} className="p-0 m-auto">
+                <Img fluid={image} className="img-responsive" />
               </Col>
             ))}
         </Row>
         <h2 className="mt-5">{title}</h2>
       </Link>
       {tags.map(tag => (
-        <Badge key={tag} pill variant="dark" className="px-2 mr-1">
+        <Badge key={tag} pill variant="light" className="px-2 mr-1">
           {tag}
         </Badge>
       ))}

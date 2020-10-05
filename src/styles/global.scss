@@ -105,3 +105,44 @@ body {
 .unemployed {
   font-size: 1.35rem;
 }
+
+.my-tooltip {
+  text-color: "red";
+  font-size: 1rem;
+  background: none;
+}
+
+.watch-list {
+  font-size: 0.9rem;
+  list-style: none;
+}
+
+.img-responsive {
+  max-width: 95%;
+  max-height: 100%;
+}
+
+.theme-toggle {
+  font-size: 1.75rem;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    border: none;
+  }
+  &:active {
+    border: none;
+  }
+}
+.theme-container{
+  border: none;
+  outline: none;
+}
+
+.light-mode {
+  color: red;
+}
+
+.dark-mode {
+  color: slateblue;
+}

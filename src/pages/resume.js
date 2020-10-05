@@ -22,18 +22,7 @@ export default ({ data }) => {
           />
         </a>
       </PageTitle>
-      <Container className="mt-5 pt-3" fluid>
-        {history.map(({ node }) => (
-          <div key={node.id}>
-            <WorkHistory
-              frontmatter={node.frontmatter}
-              image={imageMap[node.fields.slug]}
-              html={node.html}
-            />
-            <hr className="w-75" />
-          </div>
-        ))}
-      </Container>
+
     </PageLayout>
   )
 }

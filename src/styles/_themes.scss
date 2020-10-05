@@ -21,7 +21,7 @@ $themes: (
     hrefColor: $dark-blue,
     github: $black,
     linkedin: $linkedin-blue,
-    fcc: $fcc-green,
+    ka: $baby-blue,
     hr: $hr-green,
     mail: $yellow,
     file: $dark-blue,
@@ -43,7 +43,7 @@ $themes: (
     heartColor: red,
     github: $empire-red,
     linkedin: $empire-red,
-    fcc: $empire-red,
+    ka: $baby-blue,
     hr: $empire-red,
     mail: $empire-red,
     file: $empire-red,
@@ -121,7 +121,7 @@ $themes: (
   }
 }
 
-.watch-list-title {
+.watch-list-title { 
   @include themify($themes) {
     color: themed("secondary");
   }
@@ -165,8 +165,8 @@ $themes: (
     &.linkedin {
       color: themed("linkedin");
     }
-    &.fcc {
-      color: themed("fcc");
+    &.ka {
+      color: themed("ka");
     }
     &.hr {
       color: themed("hr");
