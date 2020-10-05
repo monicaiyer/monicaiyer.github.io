@@ -1,4 +1,4 @@
-See me [live!](https://gatsby-starter-portfolio.herokuapp.com/)
+See me [live!](https://monicaiyer.github.io)
 
 ## Usage
 
