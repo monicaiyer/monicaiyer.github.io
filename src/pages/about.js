@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { PageLayout, PageTitle } from "../components"
+import { PageLayout } from "../components"
 import { Container, Image } from "react-bootstrap"
 import { Link, graphql } from "gatsby"
 import { ThemeContext, SEO } from "../utils"
@@ -10,10 +10,13 @@ export default ({ data }) => {
       <a rel="noopener noreferrer" href={link}>
         {title}
       </a>
-      {author && <>&nbsp;-<i>{author}</i></>}
+      {author && (
+        <>
+          &nbsp;-<i>{author}</i>
+        </>
+      )}
     </li>
   )
-
 
   const {
     author,
@@ -34,7 +37,7 @@ export default ({ data }) => {
 
   return (
     <PageLayout>
-       <SEO title="About Me" />
+      <SEO title="About Me" />
       <Container>
         <Image
           roundedCircle
@@ -62,12 +65,23 @@ export default ({ data }) => {
               padawan
             </a>
             &nbsp;
-            <b>{occupation}</b> and a senior at the University of Waterloo pursuing a degree in Statistics and Cognitive Science. I have a
-            deep interest in data transparency and am currently exploring projects on Sharktank and DC Comic Characters!
+            <b>{occupation}</b> and a senior at the University of Waterloo
+            pursuing a degree in Statistics and Cognitive Science. I have a deep
+            interest in data transparency and am currently exploring projects on
+            Sharktank and DC Comic Characters!
           </p>
 
           <p className="i-5">
-            Check out my <Link to="/projects">projects</Link>, <Link to="/blog">blog </Link>and <a href="https://monicaiyer.tumblr.com" target="_blank">poetry</a> to see what I've been up to!
+            Check out my <Link to="/projects">projects</Link>,{" "}
+            <Link to="/blog">blog </Link>and{" "}
+            <a
+              href="https://monicaiyer.tumblr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              poetry
+            </a>{" "}
+            to see what I've been up to!
           </p>
         </article>
         <article className="w-75 m-auto">
@@ -76,8 +90,8 @@ export default ({ data }) => {
               <hr />
               <p className="unemployed">
                 <small>
-                  I am <b>looking for full-time opportunities in 2021</b>! If you
-                  like what you <Link to="/resume">see</Link>, let's get
+                  I am <b>looking for full-time opportunities in 2021</b>! If
+                  you like what you <Link to="/resume">see</Link>, let's get
                   in&nbsp;
                   <a
                     href="mailto:monicaiyer@gmail.com"
@@ -94,33 +108,31 @@ export default ({ data }) => {
           <hr />
 
           <div className="text-left row">
-
             <div className="col-6">
-            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
-              Some of my favourite reads:
-            </h5>
-            <ul className="watch-list">{bookLinks}</ul>
+              <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+                Some of my favourite reads:
+              </h5>
+              <ul className="watch-list">{bookLinks}</ul>
             </div>
             <div className="col-6">
-            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
-              Binge-worthy shows:
-            </h5>
-            <ul className="watch-list">{showLinks}</ul>
+              <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+                Binge-worthy shows:
+              </h5>
+              <ul className="watch-list">{showLinks}</ul>
             </div>
             <div className="col-6">
-            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
-              Games that changed the game:
-            </h5>
-            <ul className="watch-list">{gameLinks}</ul>
+              <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+                Games that changed the game:
+              </h5>
+              <ul className="watch-list">{gameLinks}</ul>
             </div>
             <div className="col-6">
-            <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
-              Late night munchies:
-            </h5>
-            <ul className="watch-list">{findLinks}</ul>
+              <h5 className="p-0 pl-3 ml-4 watch-list-title pt-4">
+                Late night munchies:
+              </h5>
+              <ul className="watch-list">{findLinks}</ul>
             </div>
           </div>
-
         </article>
       </Container>
     </PageLayout>

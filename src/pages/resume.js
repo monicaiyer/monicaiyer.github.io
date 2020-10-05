@@ -1,20 +1,16 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { PageLayout, PageTitle, WorkHistory } from "../components"
-import { SEO, Utils } from "../utils"
+import { PageLayout, PageTitle } from "../components"
+import { SEO } from "../utils"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Container from "react-bootstrap/Container"
+import Image from "react-bootstrap/Image"
 
-export default ({ data }) => {
-  const history = data.allMarkdownRemark.edges || []
-  const images = data.allFile.edges || []
-  const imageMap = Utils.getImageMap(images, /\/[work].*\/|$/)
+export default () => {
   return (
     <PageLayout>
       <SEO title="Resume" />
       <PageTitle title="Resume">
         &nbsp;
-        <a href="../../resume.pdf" target="_blank" download>
+        <a href="../../Monica Iyer - Resume.pdf" target="_blank" download>
           <FontAwesomeIcon
             style={{ fontSize: "2rem" }}
             icon={["fas", "file-download"]}
@@ -22,52 +18,13 @@ export default ({ data }) => {
           />
         </a>
       </PageTitle>
-
+      <a href="../../Monica Iyer - Resume.pdf" target="_blank" download>
+        <Image
+          fluid
+          src={`../../monica-iyer-resume-image.png`}
+          alt={`My Resume`}
+        />
+      </a>
     </PageLayout>
   )
 }
-
-export const query = graphql`
-  query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/work/" } }
-      sort: { fields: [frontmatter___startDate], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            company
-            location
-            position
-            tags
-            startDate(formatString: "MMMM")
-            endDate(formatString: "MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-    allFile(
-      filter: {
-        extension: { eq: "png" }
-        relativePath: { regex: "/company/" }
-        relativeDirectory: { regex: "/content/work/" }
-      }
-    ) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-          relativePath
-        }
-      }
-    }
-  }
-`
