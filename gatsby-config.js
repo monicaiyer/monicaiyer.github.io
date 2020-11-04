@@ -90,6 +90,11 @@ module.exports = {
         link: 'https://godofwar.playstation.com/',
       },
       {
+        title: 'Dead by Daylight', 
+        author: 'Behaviour Interactive', 
+        link: 'https://deadbydaylight.com/en',
+      },
+      {
         title: 'Unravel Two',
         author: 'Electronic Arts',
         link:'https://www.ea.com/games/unravel/unravel-two',
