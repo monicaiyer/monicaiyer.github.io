@@ -19,9 +19,12 @@ export default ({ data }) => {
             className={dark ? `text-white` : `text-dark`}
             items={[
               `Hey! I'm looking for more data to explore :)`,
-              "Currently working on a Sharktank project",
-              "Wondering which superhero you look like? Head over to my Projects!",
-              "Like what you see? Reach out to me!",
+              'The Light-Mode Gods have saved you - click on the sun!',
+              'Also looking for roles in Data Science and Analytics',
+              'Currently building a Facial Recognition project with Open CV',
+              'Lets work on a project together!',
+              'In the works - posts on pursuing mental health wellness',
+              'Like what you see? Reach out to me!',
             ]}
           />
         )}

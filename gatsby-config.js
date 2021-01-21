@@ -18,8 +18,8 @@ module.exports = {
       process.env.URL || process.env.DEPLOY_URL || `http://localhost:8000`,
     unemployed: true,
     designations: [
-      `ETList`,
-      `Janeite`,
+      `ETL-ist`,
+      `Jane-ite`,
       `Decision Intelligence Enthusiast`,
       `Masterchef`,
       `Voice Artist`

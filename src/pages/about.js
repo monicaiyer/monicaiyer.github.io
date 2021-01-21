@@ -65,15 +65,17 @@ export default ({ data }) => {
               padawan
             </a>
             &nbsp;
-            <b>{occupation}</b> and a senior at the University of Waterloo
-            pursuing a degree in Statistics and Cognitive Science. I have a deep
-            interest in data transparency and am currently exploring projects on
-            Sharktank and DC Comic Characters!
+            <b>{occupation}</b> and a recent graduate in Statistics and Cognitive Science
+            from University of Waterloo. I have a deep interest in data transparency and am 
+            currently exploring projects on DC Facial Recognition Comics, Advanced SQL 
+            Query Optimization and writing mini guides on pursuing Mental Health Wellness as 
+            a student and beyond!
           </p>
 
           <p className="i-5">
-            Check out my <Link to="/projects">projects</Link>,{" "}
-            <Link to="/blog">blog </Link>and{" "}
+            Check out my <Link to="/projects">projects</Link>{" "}
+            and{" "}
+            {/* Comment in blog here */}
             <a
               href="https://monicaiyer.tumblr.com"
               target="_blank"
@@ -90,7 +92,7 @@ export default ({ data }) => {
               <hr />
               <p className="unemployed">
                 <small>
-                  I am <b>looking for full-time opportunities in 2021</b>! If
+                  I am <b>looking for full-time opportunities in Data Science and Analytics</b>! If
                   you like what you <Link to="/resume">see</Link>, let's get
                   in&nbsp;
                   <a
